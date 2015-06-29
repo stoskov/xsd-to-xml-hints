@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema>
+
+ <xs:simpleType name="StringToStringConverter">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="visible"/>
+      <xs:enumeration value="collapsed"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="FormattedText">
+    <xs:sequence>
+      <xs:element name="FormattedString" maxOccurs="1" minOccurs="1">
+         <xs:complexType name="View">
+            <xs:attribute name="navigatedTo" type="StringToStringConverter" />
+          </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Button">
+    <xs:sequence>
+      <xs:element name="Button.formattedText" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="FormattedText" />
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Label">
+     <xs:sequence>
+      <xs:element name="Label.formattedText" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="FormattedText" />
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:group name="ViewSubclasses">
+    <xs:choice>
+      <xs:element name="Label" type="Label" />
+      <xs:element name="Button" type="Button" />
+    </xs:choice>
+  </xs:group>
+
+   <xs:complexType name="Page">
+    <xs:sequence>
+      <xs:group ref="ViewSubclasses" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="Page" type="Page" />
+
+</xs:schema>

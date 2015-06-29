@@ -1,0 +1,25 @@
+{
+  "name": "xsd-to-xml-hints",
+  "version": "1.0.0",
+  "description": "",
+  "main": "xsd-to-xml-hits.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "lodash": "^3.9.3",
+    "xml2js": "^0.4.9"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "glob": "^5.0.10",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-jscs": "^1.2.0",
+    "grunt-mocha-test": "^0.12.7",
+    "install": "^0.1.8",
+    "jshint-stylish": "^1.0.0",
+    "load-grunt-tasks": "^1.0.0"
+  }
+}

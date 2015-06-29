@@ -1,0 +1,24 @@
+{
+	"curly": true,
+	"eqeqeq": true,
+	"eqnull": true,
+	"immed": true,
+	"latedef": true,
+	"newcap": true,
+	"noarg": true,
+	"undef": true,
+	"loopfunc": true,
+	"maxparams": 7,
+	"maxdepth": 7,
+	"maxcomplexity": 23,
+	"browser": true,
+	"node": true,
+	"jquery": true,
+	"sub": true,
+	"globals": {
+		"describe": false,
+		"define": false,
+		"it": false,
+		"exit": false
+	}
+}

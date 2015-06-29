@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="tns" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.nativescript.org/tns.xsd"
+    xmlns="http://www.nativescript.org/tns.xsd"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+
+  <xs:group name="GT1">
+    <xs:choice>
+      <xs:element name="E1" type="T1" />
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="T1">
+    <xs:complexContent>
+      <xs:group ref="GT1" maxOccurs="1" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="E1" type="T1" />
+
+</xs:schema>

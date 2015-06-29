@@ -1,0 +1,29 @@
+{
+	"!top": ["Page"],
+	"FormattedString": {
+		"attrs": {
+			"navigatedTo": ["visible", "collapsed"]
+		},
+		"children": []
+	},
+	"Label.formattedText": {
+		"attrs": {},
+		"children": ["FormattedString"]
+	},
+	"Label": {
+		"attrs": {},
+		"children": ["Label.formattedText"]
+	},
+	"Button.formattedText": {
+		"attrs": {},
+		"children": ["FormattedString"]
+	},
+	"Button": {
+		"attrs": {},
+		"children": ["Button.formattedText"]
+	},
+	"Page": {
+		"attrs": {},
+		"children": ["Label", "Button"]
+	}
+}

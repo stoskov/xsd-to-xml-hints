@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="tns" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.nativescript.org/tns.xsd"
+    xmlns="http://www.nativescript.org/tns.xsd"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+
+  <xs:simpleType name="Type1">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\{\{.*?\}\}" />
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Type2">
+    <xs:union memberTypes="Type1">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="v1"/>
+          <xs:enumeration value="v2"/>
+          <xs:enumeration value="v3"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:complexType name="T1">
+    <xs:complexContent>
+      <xs:attribute name="attr1" type="Type1" />
+      <xs:attribute name="attr2" type="Type2" />
+      <xs:attribute name="attr3" type="Type2" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:element name="E1" type="T1" />
+
+</xs:schema>
