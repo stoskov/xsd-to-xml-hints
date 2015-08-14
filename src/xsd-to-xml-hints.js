@@ -26,6 +26,6 @@ fs.readFile(args[0], function (err, xml) {
 		parser = new Parser(json);
 		result = parser.parse();
 
-		console.log(JSON.stringify(result.flatElements));
+		console.log(JSON.stringify(result));
 	});
 });

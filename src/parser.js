@@ -25,6 +25,7 @@ consts = {
 		enumeration: "enumeration",
 		attributeGroup: "attributeGroup",
 		choice: "choice",
+		all: "all",
 		sequence: "sequence",
 		group: "group"
 	}
@@ -145,6 +146,7 @@ Parser.prototype = {
 		if (currentNodeType === consts.nodes.complexContent ||
 			currentNodeType === consts.nodes.complexType ||
 			currentNodeType === consts.nodes.sequence ||
+			currentNodeType === consts.nodes.all ||
 			currentNodeType === consts.nodes.choice) {
 
 			this._loopOnChildren(currentNode, function (childNodeType, childNode) {
