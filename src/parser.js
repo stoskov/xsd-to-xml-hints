@@ -27,7 +27,8 @@ consts = {
 		choice: "choice",
 		all: "all",
 		sequence: "sequence",
-		group: "group"
+		group: "group",
+		any: "any"
 	}
 };
 
@@ -142,8 +143,9 @@ Parser.prototype = {
 			attributes = this._getNodeAttributes(currentNode);
 
 		debugComplexType("Walk:" + JSON.stringify(attributes));
-
-		if (currentNodeType === consts.nodes.complexContent ||
+		if (currentNodeType === consts.nodes.any) {
+			result.children = result.children || {};
+		} else if (currentNodeType === consts.nodes.complexContent ||
 			currentNodeType === consts.nodes.complexType ||
 			currentNodeType === consts.nodes.sequence ||
 			currentNodeType === consts.nodes.all ||
