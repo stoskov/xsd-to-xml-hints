@@ -3,16 +3,14 @@ var fs = require("fs"),
 	args = process.argv.slice(2),
 	parseString = require("xml2js").parseString;
 
-function parseXsd(pathToXsd) {
+function parseXsd(pathToXsd, pathToJson) {
 
-	console.log(pathToXsd);
-
-	if (!pathToXsd) {
+	if (!pathToXsd && args.length <= 0) {
 		console.log("Usage: node xsdtoxmlhits <path to xsd file>");
 		process.exit(2);
 	}
 
-	fs.readFile(pathToXsd, function (err, xml) {
+	fs.readFile(pathToXsd || args[0], function (err, xml) {
 		if (err) {
 			console.log(err);
 			process.exit(2);
@@ -30,7 +28,15 @@ function parseXsd(pathToXsd) {
 			parser = new Parser(json);
 			result = parser.parse();
 
-			console.log(JSON.stringify(result));
+			var  = JSON.stringify(result);
+
+			if (pathToJson){
+				var outJson = fs.createWriteStream(pathToJson);
+				outJson.write(jsonResult);
+			} else {
+				console.log(jsonResult);
+			}
+
 		});
 	});
 }
