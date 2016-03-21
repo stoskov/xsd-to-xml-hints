@@ -28,7 +28,7 @@ function parseXsd(pathToXsd, pathToJson) {
 			parser = new Parser(json);
 			result = parser.parse();
 
-			var  = JSON.stringify(result);
+			var jsonResult = JSON.stringify(result);
 
 			if (pathToJson){
 				var outJson = fs.createWriteStream(pathToJson);
