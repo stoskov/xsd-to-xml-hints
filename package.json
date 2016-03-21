@@ -1,8 +1,8 @@
 {
   "name": "xsd-to-xml-hints",
   "version": "1.0.0",
-  "description": "",
-  "main": "xsd-to-xml-hits.js",
+  "description": "Simple xsd schema pareser producing json used by [CodeMirror XML hints plugin](https://codemirror.net/demo/xmlcomplete.html)",
+  "main": "./src/xsd-to-xml-hints.js",
   "scripts": {},
   "author": "",
   "license": "ISC",

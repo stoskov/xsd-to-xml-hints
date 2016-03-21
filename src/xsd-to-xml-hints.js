@@ -3,29 +3,36 @@ var fs = require("fs"),
 	args = process.argv.slice(2),
 	parseString = require("xml2js").parseString;
 
-if (args.length <= 0) {
-	console.log("Usage: node xsdtoxmlhits <path to xsd file>");
-	exit();
-}
+function parseXsd(pathToXsd) {
 
-fs.readFile(args[0], function (err, xml) {
-	if (err) {
-		console.log(err);
-		exit();
+	console.log(pathToXsd);
+
+	if (!pathToXsd) {
+		console.log("Usage: node xsdtoxmlhits <path to xsd file>");
+		process.exit(2);
 	}
 
-	parseString(xml, function (err, json) {
-		var result,
-			parser;
-
+	fs.readFile(pathToXsd, function (err, xml) {
 		if (err) {
 			console.log(err);
-			exit();
+			process.exit(2);
 		}
 
-		parser = new Parser(json);
-		result = parser.parse();
+		parseString(xml, function (err, json) {
+			var result,
+				parser;
 
-		console.log(JSON.stringify(result));
+			if (err) {
+				console.log(err);
+				exit();
+			}
+
+			parser = new Parser(json);
+			result = parser.parse();
+
+			console.log(JSON.stringify(result));
+		});
 	});
-});
+}
+
+module.exports = parseXsd;
