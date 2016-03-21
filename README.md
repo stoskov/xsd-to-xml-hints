@@ -4,8 +4,10 @@ Simple xsd schema pareser producing json used by [CodeMirror XML hints plugin](h
 
 ## Usage
 
+Install the module:
+
 ```javascript
-node <path>/src/xsd-to-xml-hints.js "path to xsd"
+npm install  "https://github.com/stoskov/xsd-to-xml-hints/tarball/master"
 ```
 
 ## License
