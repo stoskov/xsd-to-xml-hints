@@ -10,6 +10,11 @@ Install the module:
 npm install  "https://github.com/stoskov/xsd-to-xml-hints/tarball/master"
 ```
 
+Then use it as follows:
+```javascript
+let xsdHint = require("xsd-to-xml-hints")(<path-to-xsd>);
+```
+
 ## License
 The MIT License (MIT)
 
